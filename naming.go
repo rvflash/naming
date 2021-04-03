@@ -52,7 +52,7 @@ func CamelCase(s string) string {
 		if k > 0 {
 			return strings.Title(v)
 		}
-		return v
+		return strings.ToLower(v)
 	}), blank)
 }
 
