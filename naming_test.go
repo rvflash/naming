@@ -12,9 +12,9 @@ import (
 )
 
 const (
-	seps     = " _-"
+	seps     = " _-:"
 	sample   = "Little-sample varName b_42"
-	repeated = "c----c C_-_c cccCCC   cC"
+	repeated = "c--:-c C_-_c cccCCC   cC"
 	complex  = "camelCase CONSTANT_CASE kebab-case PascalCase snake_case Train-Case"
 )
 

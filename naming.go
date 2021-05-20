@@ -29,7 +29,7 @@ func Fields(s string) []string {
 		buf = strings.Builder{}
 		cut = unicode.IsUpper
 		del = func(r rune) bool {
-			return r == kebab || r == snake || unicode.IsSpace(r)
+			return r == kebab || r == snake || unicode.IsSpace(r) || unicode.IsPunct(r)
 		}
 		d, wd, c, wc bool
 	)
