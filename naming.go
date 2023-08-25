@@ -9,6 +9,9 @@ package naming
 import (
 	"strings"
 	"unicode"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 const (
@@ -17,6 +20,11 @@ const (
 	space = ' '
 	blank = ""
 )
+
+// Join creates a multiple-word identifier based on the given format and list of words.
+func Join(format func(s string) string, words ...string) string {
+	return format(strings.Join(words, string(snake)))
+}
 
 // Fields splits the string s around each instance of one or more consecutive white space characters,
 // underscore or hyphen. Its also break title words.
@@ -50,7 +58,7 @@ func Fields(s string) []string {
 func CamelCase(s string) string {
 	return strings.Join(mapping(Fields(s), func(k int, v string) string {
 		if k > 0 {
-			return strings.Title(v)
+			return title(v)
 		}
 		return strings.ToLower(v)
 	}), blank)
@@ -82,7 +90,7 @@ func KebabCase(s string) string {
 // PascalCase applies the Fields method on s and returns a string with all the words capitalized.
 func PascalCase(s string) string {
 	return strings.Join(mapping(Fields(s), func(k int, v string) string {
-		return strings.Title(v)
+		return title(v)
 	}), blank)
 }
 
@@ -98,7 +106,7 @@ func SnakeCase(s string) string {
 // and separated with a hyphen.
 func TrainCase(s string) string {
 	return strings.Join(mapping(Fields(s), func(k int, v string) string {
-		return strings.Title(v)
+		return title(v)
 	}), string(kebab))
 }
 
@@ -117,4 +125,8 @@ func mapping(a []string, f func(k int, v string) string) []string {
 		a[k] = f(k, v)
 	}
 	return a
+}
+
+func title(s string) string {
+	return cases.Title(language.English).String(s)
 }

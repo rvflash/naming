@@ -1,8 +1,8 @@
 # Naming conventions
 
 [![GoDoc](https://godoc.org/github.com/rvflash/naming?status.svg)](https://godoc.org/github.com/rvflash/naming)
-[![Build Status](https://api.travis-ci.org/rvflash/naming.svg?branch=main)](https://travis-ci.org/rvflash/naming?branch=main)
-[![Code Coverage](https://codecov.io/gh/rvflash/naming/branch/main/graph/badge.svg)](https://codecov.io/gh/rvflash/naming)
+[![Build Status](https://github.com/rvflash/naming/workflows/build/badge.svg)](https://github.com/rvflash/naming/actions?workflow=build)
+[![Code Coverage](https://codecov.io/gh/rvflash/naming/branch/master/graph/badge.svg)](https://codecov.io/gh/rvflash/naming)
 [![Go Report Card](https://goreportcard.com/badge/github.com/rvflash/naming?)](https://goreportcard.com/report/github.com/rvflash/naming)
 
 

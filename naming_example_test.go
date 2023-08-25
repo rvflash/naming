@@ -10,6 +10,11 @@ import (
 	"github.com/rvflash/naming"
 )
 
+func ExampleJoin() {
+	fmt.Println(naming.Join(naming.PascalCase, "camel", "case", "data-19"))
+	// output: CamelCaseData19
+}
+
 func ExampleFields() {
 	fmt.Println(naming.Fields("This isA really-sample XML_or_Whatever    data"))
 	// output: [This is A really sample XML or Whatever data]
@@ -46,8 +51,8 @@ func ExampleSnakeCase() {
 }
 
 func ExampleTrainCase() {
-	fmt.Println(naming.TrainCase("HTTP header case"))
-	// output: HTTP-Header-Case
+	fmt.Println(naming.TrainCase("content type"))
+	// output: Content-Type
 }
 
 func ExampleUpperFlatCase() {
